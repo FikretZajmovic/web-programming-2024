@@ -514,3 +514,20 @@ h6,
 		}
 	}
 }
+
+.carousel-caption {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: auto;
+  }
+
+#carousel-img {
+    max-height: 800px;
+    width: auto;
+    margin: 0 auto; 
+  }

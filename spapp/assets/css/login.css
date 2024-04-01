@@ -1,6 +1,4 @@
 body{
-    color: #fff;
-    background-image: url(/img/product-5.jpg);
     background-size: 100%;
     font-family: 'Roboto', sans-serif;
 }
@@ -64,7 +62,6 @@ body{
 }
 .signup-form .btn{
     font-size: 16px;
-    font-weight: bold;
     min-width: 140px;
     outline: none !important;
 }
@@ -87,4 +84,12 @@ body{
 }
 .signup-form form a:hover{
     text-decoration: underline;
+}
+
+#sometext {
+    color: #000000;
+}
+
+#register {
+    color: #70320e;
 }

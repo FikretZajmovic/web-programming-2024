@@ -1,0 +1,122 @@
+<body>
+  <!-- Page Header Start -->
+
+  <!-- Page Header End -->
+
+  <!-- Order Start -->
+  <section class="h-100 h-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12">
+          <div
+            class="card card-registration card-registration-2"
+            style="border-radius: 15px"
+          >
+            <div class="card-body p-0">
+              <div class="row g-0">
+                <div class="col-lg-8">
+                  <div class="p-5">
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-5"
+                    >
+                      <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
+                      <h6 class="mb-0 text-muted">Items</h6>
+                    </div>
+                    <hr class="my-4" />
+
+                    <div id="order-list"></div>
+
+                    <hr class="my-4" />
+                    <div class="pt-5">
+                      <h6 class="mb-0">
+                        <a href="#product" class="text-body"
+                          ><i class="fas fa-long-arrow-alt-left me-2"></i>Back
+                          to products</a
+                        >
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 bg-grey">
+                  <div class="p-5">
+                    <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
+                    <hr class="my-4" />
+
+                    <div class="d-flex justify-content-between mb-4">
+                      <h5 class="text-uppercase">
+                        Items: <span id="total-items">0</span>
+                      </h5>
+                      <h5>Price: <span id="total-price">0.00</span></h5>
+                    </div>
+
+                    <h5 class="text-uppercase mb-3">Shipping</h5>
+
+                    <div class="mb-4 pb-2">
+                      <select id="delivery-option" class="select">
+                        <option value="standard">
+                          Standard Delivery - €5.00
+                        </option>
+                        <option value="express">
+                          Express Delivery - €10.00
+                        </option>
+                      </select>
+                    </div>
+
+                    <h5 class="text-uppercase mb-3">Promo code</h5>
+
+                    <div class="mb-5">
+                      <div class="form-outline">
+                        <input
+                          type="text"
+                          id="form3Examplea2"
+                          class="form-control form-control-lg"
+                        />
+                        <label class="form-label" for="form3Examplea2"
+                          >Enter your code</label
+                        >
+                      </div>
+                    </div>
+
+                    <hr class="my-4" />
+
+                    <div class="d-flex justify-content-between mb-5">
+                      <h5 class="text-uppercase">Total price</h5>
+                      <h5 id="total-price-with-delivery">€ 0.00</h5>
+                    </div>
+
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-block btn-lg"
+                      data-mdb-ripple-color="dark"
+                      href="#checkout"
+                    >
+                      Go to checkout
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Order End -->
+
+  <!-- Copyright Start -->
+  <div
+    class="container-fluid copyright text-light py-4 wow fadeIn"
+    data-wow-delay="0.1s"
+  >
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          &copy; <a href="#">Burch</a>, All Right Reserved.
+        </div>
+        <div class="col-md-6 text-center text-md-end"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Copyright End -->
+  <script src="/spapp/assets/js/order.js"></script>
+</body>
