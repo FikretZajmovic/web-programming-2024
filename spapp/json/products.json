@@ -1,0 +1,51 @@
+[
+    {
+      "name": "Muffin",
+      "price": "€7",
+      "description": "Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos",
+      "image": "/spapp/assets/img/muffin.jpg"
+    },
+    {
+      "name": "Bread",
+      "price": "€4",
+      "description": "Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos",
+      "image": "/spapp/assets/img/bread.jpg"
+    },
+    {
+      "name": "Croissant",
+      "price": "€10",
+      "description": "Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos",
+      "image": "/spapp/assets/img/croissant.jpg"
+    },
+    {
+      "name": "Burek",
+      "price": "€6",
+      "description": "Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos",
+      "image": "/spapp/assets/img/burek.jpg"
+    },
+    {
+      "name": "Cake",
+      "price": "€15",
+      "description": "Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos",
+      "image": "/spapp/assets/img/cake.jpg"
+    },
+    {
+      "name": "Pizza",
+      "price": "€10",
+      "description": "Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos",
+      "image": "/spapp/assets/img/pizza.jpg"
+    },
+    {
+      "name": "Cookies",
+      "price": "€8",
+      "description": "Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos",
+      "image": "/spapp/assets/img/cookies.jpg"
+    },
+    {
+      "name": "Buns",
+      "price": "€7",
+      "description": "Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos",
+      "image": "/spapp/assets/img/buns.jpg"
+    }
+]
+  
