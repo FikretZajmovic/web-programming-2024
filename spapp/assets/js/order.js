@@ -4,6 +4,7 @@ var deliveryFees = {
   standard: 5.0,
   express: 10.0,
 };
+
 // Function to remove product from cart
 function removeFromCart(productName) {
   // Retrieve cart items from localStorage
@@ -48,7 +49,7 @@ function updateOrderPage() {
     $("#order-list").append(
       '<div class="row mb-4 d-flex justify-content-between align-items-center">' +
         '<div class="col-md-2 col-lg-2 col-xl-2">' +
-        '<img src="/spapp/assets/img/' +
+        '<img src="/web-programming-project/spapp/assets/img/' +
         item.productName.toLowerCase() +
         '.jpg" class="img-fluid rounded-3" alt="' +
         item.productName +
@@ -85,6 +86,7 @@ function updateOrderPage() {
   });
 
   var selectedOption = $("#delivery-option").val();
+
   // Get the delivery fee based on the selected option
   var deliveryFee = deliveryFees[selectedOption] || 0;
 

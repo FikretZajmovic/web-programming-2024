@@ -1,6 +1,6 @@
 getReviews = () => {
   // Through the library called JQuery
-  $.get("/spapp/json/reviews.json", (data) => {
+  $.get("/web-programming-project/spapp/json/reviews.json", (data) => {
     // Callback function
     let output = "";
     data.forEach((review, index) => {

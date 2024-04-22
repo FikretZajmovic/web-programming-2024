@@ -1,7 +1,7 @@
 let allProducts = [];
 
 getProducts = () => {
-  $.get("/spapp/json/products.json", (data) => {
+  $.get("/web-programming-project/spapp/json/products.json", (data) => {
     allProducts = data;
     displayProducts(data);
   });

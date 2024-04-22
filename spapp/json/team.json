@@ -1,0 +1,42 @@
+[
+  {
+    "fullName": "Safet Isovic",
+    "designation": "Kuhar",
+    "image": "/web-programming-project/spapp/assets/img/team-1.jpg",
+    "socialLinks": {
+      "facebook": "",
+      "twitter": "",
+      "instagram": ""
+    }
+  },
+  {
+    "fullName": "Hanka Paldum",
+    "designation": "Cistacica",
+    "image": "/web-programming-project/spapp/assets/img/team-2.jpg",
+    "socialLinks": {
+      "facebook": "",
+      "twitter": "",
+      "instagram": ""
+    }
+  },
+  {
+    "fullName": "Jasmin Fazlic",
+    "designation": "Pekar",
+    "image": "/web-programming-project/spapp/assets/img/team-3.jpg",
+    "socialLinks": {
+      "facebook": "",
+      "twitter": "",
+      "instagram": ""
+    }
+  },
+  {
+    "fullName": "Amar Hodzic",
+    "designation": "Tehnolog",
+    "image": "/web-programming-project/spapp/assets/img/team-4.jpg",
+    "socialLinks": {
+      "facebook": "",
+      "twitter": "",
+      "instagram": ""
+    }
+  }
+]
