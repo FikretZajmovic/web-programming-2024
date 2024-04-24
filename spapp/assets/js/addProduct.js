@@ -1,22 +1,46 @@
-$("#editUserForm").validate({
+$("#addProductForm").validate({
+  rules: {
+    product_name: {
+      required: true,
+    },
+    product_description: {
+      required: false,
+    },
+    product_price: {
+      required: true,
+    },
+    product_image: {
+      required: false,
+    },
+  },
+  messages: {
+    product_name: {
+      required: "Please enter product name",
+    },
+    product_price: {
+      required: "Please enter product price",
+    },
+  },
   submitHandler: (form, event) => {
     event.preventDefault();
+    blockUi("body");
     let data = serializeForm(form);
-    $.post("../backend/add_user.php", data)
+
+    $.post("../backend/add_product.php", data)
       .done(function (response) {
         console.log("Data sent successfully:", data);
-        getUsers();
+        $("#addProductForm")[0].reset();
       })
       .fail(function (xhr, status, error) {
         console.error("Error:", error);
       })
       .always(function () {
-        unblockUI("body");
+        unblockUi("body");
       });
   },
 });
 
-blockUI = (element) => {
+blockUi = (element) => {
   $(element).block({
     message: '<div class="spinner-border text-primary" role="status"></div>',
     css: {
@@ -30,7 +54,7 @@ blockUI = (element) => {
   });
 };
 
-unblockUI = (element) => {
+unblockUi = (element) => {
   $(element).unblock({});
 };
 
@@ -39,6 +63,5 @@ serializeForm = (form) => {
   $.each($(form).serializeArray(), function () {
     jsonResult[this.name] = this.value;
   });
-
   return jsonResult;
 };

@@ -1,12 +1,7 @@
 <body>
   <div class="container">
     <div class="signup-form">
-      <form
-        id="bootstrap-form"
-        method="post"
-        onsubmit="objectFormHandler(this, event)"
-      >
-        <input type="hidden" class="form-control" id="id" name="id" />
+      <form id="bootstrap-form" method="post">
         <h2>Register</h2>
         <div class="form-group">
           <div class="row">
@@ -16,7 +11,7 @@
                 class="form-control"
                 name="first_name"
                 placeholder="First Name"
-                id="first_name"
+                id="firstname"
               />
             </div>
             <div class="col">
@@ -25,7 +20,7 @@
                 class="form-control"
                 name="last_name"
                 placeholder="Last Name"
-                id="last_name"
+                id="lastname"
               />
             </div>
           </div>
@@ -57,9 +52,9 @@
             <input
               type="text"
               class="form-control"
-              name="confirm_password"
+              name="confirmpassword"
               placeholder="Confirm Password"
-              id="confirm_password"
+              id="confirmpassword"
             />
           </div>
         </div>

@@ -8,12 +8,12 @@ $userService = new UserService();
 
 unset($payload['confirmpassword']);
 
-if($payload['id'] != NULL && $payload['id'] != '') {
+if($payload['user_id'] != NULL && $payload['user_id'] != '') {
     $user = $userService->editUser($payload);
 }
 
 else {
-    unset($payload['id']);
+    unset($payload['user_id']);
     $user = $userService->addUser($payload);
 }
 

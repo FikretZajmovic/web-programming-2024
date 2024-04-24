@@ -1,21 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IBU Startup | Users</title>
-  </head>
-  <body>
-    <div class="container text-center" style="margin-top: 64px">
-      <div class="row gap-4 p-4">
-        <h1 class="text-center">Users</h1>
-        <div
-          class="col-md-12 bg-white rounded-5 p-4 d-flex flex-wrap gap-4 justify-content-center border"
-          id="userSection"
-        ></div>
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Users</h1>
+  <div class="row row-cols-1 row-cols-md-2 g-4" id="userSection"></div>
+</div>
+
+<div
+  class="modal fade"
+  id="edit-user"
+  tabindex="-1"
+  aria-labelledby="modal-title"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="color: #000000">Edit User</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" id="editUserForm">
+          <input type="hidden" id="edit_user_id" name="user_id" />
+          <label for="first_name" style="color: #000000">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="first_name"
+            id="first_name"
+            required
+          />
+          <label for="last_name" style="color: #000000">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="last_name"
+            id="last_name"
+            required
+          />
+          <label for="phone_number" style="color: #000000">Phone Number</label>
+          <input
+            type="text"
+            class="form-control"
+            name="phone_number"
+            id="phone_number"
+            required
+          />
+          <label for="email" style="color: #000000">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            id="email"
+            required
+          />
+          <label for="password" style="color: #000000">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            id="password"
+            required
+          />
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">
+              <i class="fa fa-check" aria-hidden="true"></i> Confirm
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              <i class="fa fa-ban" aria-hidden="true"></i> Cancel
+            </button>
+          </div>
+        </form>
       </div>
     </div>
-
-    <script src="./frontend/utils/fetch.js"></script>
-  </body>
-</html>
+  </div>
+</div>
+<script src="/web-programming-project/spapp/assets/js/jquery.validate.min.js"></script>
+<script src="/web-programming-project/spapp/assets/js/additional-methods.min.js"></script>
+<script src="/web-programming-project/spapp/assets/js/jquery.blockUI.js"></script>
+<script src="/web-programming-project/spapp/assets/js/fetchUsers.js"></script>
+<script src="/web-programming-project/spapp/assets/js/editUserForm.js"></script>
+<script src="/web-programming-project/spapp/assets/js/editUser.js"></script>
+<script src="/web-programming-project/spapp/assets/js/deleteUser.js"></script>

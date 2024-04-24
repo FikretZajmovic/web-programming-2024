@@ -2,7 +2,7 @@
 
 require_once __DIR__ . "/rest/services/UserService.class.php";
 
-$user_id = $_REQUEST['id'];
+$user_id = $_REQUEST['user_id'];
 if($user_id == NULL || $user_id == '') {
     header('HTTP/1.1 500 Bad Request');
     die(json_encode(['error' => "Provide a valid position ID!"]));

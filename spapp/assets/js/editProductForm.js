@@ -1,11 +1,11 @@
-$("#editUserForm").validate({
+$("#editProductForm").validate({
   submitHandler: (form, event) => {
     event.preventDefault();
     let data = serializeForm(form);
-    $.post("../backend/add_user.php", data)
+    $.post("../backend/add_product.php", data)
       .done(function (response) {
         console.log("Data sent successfully:", data);
-        getUsers();
+        getProducts();
       })
       .fail(function (xhr, status, error) {
         console.error("Error:", error);

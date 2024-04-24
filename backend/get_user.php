@@ -2,7 +2,7 @@
 
 require_once __DIR__ . "/rest/services/UserService.class.php";
 
-$user_id = $_REQUEST['id'];
+$user_id = $_REQUEST['user_id'];
 
 $userService = new UserService();
 $user = $userService->getUserByID($user_id);

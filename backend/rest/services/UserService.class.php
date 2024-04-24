@@ -18,19 +18,19 @@ class UserService {
         return ["data" => $data];
     }
 
-    public function getUserByID($id) {
-        return $this->userDao->getUserByID($id);
+    public function getUserByID($user_id) {
+        return $this->userDao->getUserByID($user_id);
     }
 
-    public function deleteUser($id) {
-        $this->userDao->deleteUser($id);
+    public function deleteUser($user_id) {
+        $this->userDao->deleteUser($user_id);
     }
 
     public function editUser($user) {
-        $id = $user['id'];
-        unset($user['id']);
+        $user_id = $user['user_id'];
+        unset($user['user_id']);
 
-        $this->userDao->editUser($id, $user);
+        $this->userDao->editUser($user_id, $user);
     }
 }
 

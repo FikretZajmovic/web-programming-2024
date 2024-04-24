@@ -1,41 +1,42 @@
 $("#reviewForm").validate({
   rules: {
-    '[id="recipient-name"]': {
+    name: {
       required: true,
       minlength: 1,
     },
-    '[id="message-text"]': {
+    message: {
       required: true,
       minlength: 1,
     },
   },
   messages: {
-    '[id="recipient-name"]': {
+    name: {
       required: "Please enter your name",
       minlength: "Name should be at least 1 character",
     },
-    '[id="message-text"]': {
+    message: {
       required: "Please enter your message",
       minlength: "Message should be at least 1 character",
     },
   },
-  submitHandler: function (form) {
-    console.log("Submit handler triggered");
-    modalFormHandler(form);
+  submitHandler: (form, event) => {
+    event.preventDefault();
+    blockUi("body");
+    let data = serializeForm(form);
+
+    $.post("../backend/add_review.php", data)
+      .done(function (response) {
+        console.log("Data sent successfully:", data);
+        $("#reviewForm")[0].reset();
+      })
+      .fail(function (xhr, status, error) {
+        console.error("Error:", error);
+      })
+      .always(function () {
+        unblockUi("body");
+      });
   },
 });
-
-function modalFormHandler(form) {
-  blockUi("#reviewForm");
-  let data = serializeForm(form);
-
-  // Custom action for handling modal form data
-  console.log("Modal form data:", data);
-
-  // Reset the form
-  form.reset();
-  unblockUi("#reviewForm");
-}
 
 blockUi = (element) => {
   $(element).block({

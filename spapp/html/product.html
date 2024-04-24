@@ -54,28 +54,172 @@
           Explore The Categories Of Our Bakery Products
         </h1>
       </div>
-      <div class="container mt-5 mb-5">
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-            <div class="input-group">
-              <input
-                id="search-input"
-                type="text"
-                class="form-control"
-                placeholder="Search..."
-                aria-label="Search"
-                aria-describedby="button-addon2"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="row g-4" id="products"></div>
     </div>
   </div>
-  <!-- Product End -->
-  <!-- Footer Start -->
-  <!-- Footer End -->
+
+  <div class="d-grid gap-2 col-2 mx-auto mb-5">
+    <button
+      class="btn btn-primary"
+      type="button"
+      data-bs-toggle="modal"
+      data-bs-target="#productModal"
+    >
+      Add a product
+    </button>
+  </div>
+
+  <div
+    class="modal fade"
+    id="editProductModal"
+    tabindex="-1"
+    aria-labelledby="modal-title"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" style="color: #000000">Edit product</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form method="post" id="editProductForm">
+            <input type="hidden" id="edit_product_id" name="product_id" />
+            <label for="product_name" style="color: #000000"
+              >Product name:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="product_name"
+              id="product_name"
+              required
+            />
+            <label for="product_description" style="color: #000000"
+              >Product description:</label
+            >
+            <textarea
+              class="form-control"
+              id="product_description"
+              style="height: 150px"
+              name="product_description"
+            ></textarea>
+            <label for="product_image" class="form-label">Product image:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="product_image"
+              id="product_image"
+            />
+            <label for="product_price" style="color: #000000"
+              >Product price:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="product_price"
+              id="product_price"
+              required
+            />
+
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">
+                <i class="fa fa-check" aria-hidden="true"></i> Confirm
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                <i class="fa fa-ban" aria-hidden="true"></i> Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade"
+    id="productModal"
+    tabindex="-1"
+    aria-labelledby="modal-title"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" style="color: #000000">Add product</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form method="post" id="addProductForm">
+            <input type="hidden" id="edit_product_id" name="product_id" />
+            <label for="product_name" style="color: #000000"
+              >Product name:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="product_name"
+              id="product_name"
+              required
+            />
+            <label for="product_description" style="color: #000000"
+              >Product description:</label
+            >
+            <textarea
+              class="form-control"
+              id="product_description"
+              style="height: 150px"
+              name="product_description"
+            ></textarea>
+            <label for="product_image" class="form-label">Product image:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="product_image"
+              id="product_image"
+            />
+            <label for="product_price" style="color: #000000"
+              >Product price:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="product_price"
+              id="product_price"
+              required
+            />
+
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">
+                <i class="fa fa-check" aria-hidden="true"></i> Confirm
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                <i class="fa fa-ban" aria-hidden="true"></i> Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Copyright Start -->
   <div
@@ -91,6 +235,13 @@
     </div>
   </div>
 
+  <script src="/web-programming-project/spapp/assets/js/jquery.validate.min.js"></script>
+  <script src="/web-programming-project/spapp/assets/js/additional-methods.min.js"></script>
+  <script src="/web-programming-project/spapp/assets/js/jquery.blockUI.js"></script>
   <script src="/web-programming-project/spapp/assets/js/fetchProducts.js"></script>
   <script src="/web-programming-project/spapp/assets/js/products.js"></script>
+  <script src="/web-programming-project/spapp/assets/js/editProductForm.js"></script>
+  <script src="/web-programming-project/spapp/assets/js/editProduct.js"></script>
+  <script src="/web-programming-project/spapp/assets/js/deleteProduct.js"></script>
+  <script src="/web-programming-project/spapp/assets/js/addProduct.js"></script>
 </body>
