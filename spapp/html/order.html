@@ -86,9 +86,10 @@
 
                     <button
                       type="button"
+                      id="checkout-btn"
                       class="btn btn-primary btn-block btn-lg"
                       data-mdb-ripple-color="dark"
-                      href="#checkout"
+                      href="checkout.html"
                     >
                       Go to checkout
                     </button>
@@ -118,5 +119,16 @@
     </div>
   </div>
   <!-- Copyright End -->
-  <script src="/spapp/assets/js/order.js"></script>
+  <script src="/web-programming-project/spapp/assets/js/order.js"></script>
+  <script>
+    // Assuming your checkout button has an id of "checkout-btn"
+    const checkoutButton = document.getElementById("checkout-btn");
+
+    // Add event listener to the checkout button
+    checkoutButton.addEventListener("click", function () {
+      // Redirect to the checkout page
+      window.location.href =
+        "/web-programming-project/spapp/html/checkout.html"; // Update the URL as needed
+    });
+  </script>
 </body>

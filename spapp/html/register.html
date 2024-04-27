@@ -1,12 +1,7 @@
 <body>
   <div class="container">
     <div class="signup-form">
-      <form
-        id="bootstrap-form"
-        method="post"
-        onsubmit="objectFormHandler(this, event)"
-      >
-        <input type="hidden" class="form-control" id="id" name="id" />
+      <form id="bootstrap-form" method="post">
         <h2>Register</h2>
         <div class="form-group">
           <div class="row">
@@ -16,7 +11,7 @@
                 class="form-control"
                 name="first_name"
                 placeholder="First Name"
-                id="first_name"
+                id="firstname"
               />
             </div>
             <div class="col">
@@ -25,7 +20,7 @@
                 class="form-control"
                 name="last_name"
                 placeholder="Last Name"
-                id="last_name"
+                id="lastname"
               />
             </div>
           </div>
@@ -57,9 +52,9 @@
             <input
               type="text"
               class="form-control"
-              name="confirm_password"
+              name="confirmpassword"
               placeholder="Confirm Password"
-              id="confirm_password"
+              id="confirmpassword"
             />
           </div>
         </div>
@@ -97,13 +92,13 @@
       </div>
     </div>
   </div>
-  <script src="/spapp/assets/js/jquery.validate.min.js"></script>
-  <script src="/spapp/assets/js/additional-methods.min.js"></script>
+  <script src="/web-programming-project/spapp/assets/js/jquery.validate.min.js"></script>
+  <script src="/web-programming-project/spapp/assets/js/additional-methods.min.js"></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"
     integrity="sha512-QSb5le+VXUEVEQbfljCv8vPnfSbVoBF/iE+c6MqDDqvmzqnr4KL04qdQMCm0fJvC3gCWMpoYhmvKBFqm1Z4c9A=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   ></script>
-  <script src="/spapp/assets/js/register.js"></script>
+  <script src="/web-programming-project/spapp/assets/js/register.js"></script>
 </body>

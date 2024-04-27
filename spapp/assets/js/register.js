@@ -1,6 +1,3 @@
-var users = []; // Removed if not used for anything else
-var idCounter = 1; // If you're using this for assigning IDs, keep it
-
 $("#bootstrap-form").validate({
   rules: {
     first_name: {
@@ -19,7 +16,7 @@ $("#bootstrap-form").validate({
       required: true,
       minlength: 8,
     },
-    confirm_password: {
+    confirmpassword: {
       equalTo: "#password", // Added confirm password validation
     },
     phone_number: {
@@ -44,7 +41,7 @@ $("#bootstrap-form").validate({
       required: "Please enter a password",
       minlength: "Password should be at least 8 characters",
     },
-    confirm_password: {
+    confirmpassword: {
       equalTo: "Passwords do not match",
     },
     phone_number: {
@@ -55,32 +52,24 @@ $("#bootstrap-form").validate({
       required: "You must accept the Terms of Use and Privacy Policy",
     },
   },
-  submitHandler: function (form, event) {
+  submitHandler: (form, event) => {
     event.preventDefault();
-    objectFormHandler(form);
+    blockUi("body");
+    let data = serializeForm(form);
+
+    $.post("../backend/add_user.php", data)
+      .done(function (response) {
+        console.log("Data sent successfully:", data);
+        $("#bootstrap-form")[0].reset();
+      })
+      .fail(function (xhr, status, error) {
+        console.error("Error:", error);
+      })
+      .always(function () {
+        unblockUi("body");
+      });
   },
 });
-
-function objectFormHandler(form, event) {
-  event.preventDefault();
-  blockUi("#bootstrap-form");
-  let data = serializeForm(form);
-
-  data["id"] = idCounter;
-  idCounter++;
-  // Custom action for user registration
-  registerUser(data);
-
-  // Reset the form
-  form.reset();
-  unblockUi("#bootstrap-form");
-}
-
-function registerUser(userData) {
-  // Additional logic for user registration, e.g., sending data to server
-  // For demonstration purposes, let's just log the user data
-  console.log("New user registered:", userData);
-}
 
 blockUi = (element) => {
   $(element).block({

@@ -2,25 +2,25 @@
   {
     "name": "Stipo",
     "profession": "Politician",
-    "image": "/spapp/assets/img/testimonial-1.jpg",
+    "image": "/web-programming-project/spapp/assets/img/testimonial-1.jpg",
     "content": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit."
   },
   {
     "name": "Ramo",
     "profession": "Lawyer",
-    "image": "/spapp/assets/img/testimonial-2.jpg",
+    "image": "/web-programming-project/spapp/assets/img/testimonial-2.jpg",
     "content": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit."
   },
   {
     "name": "Fudo",
     "profession": "Gambler",
-    "image": "/spapp/assets/img/testimonial-3.jpg",
+    "image": "/web-programming-project/spapp/assets/img/testimonial-3.jpg",
     "content": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit."
   },
   {
     "name": "Hajrudin",
     "profession": "TikToker",
-    "image": "/spapp/assets/img/testimonial-4.jpg",
+    "image": "/web-programming-project/spapp/assets/img/testimonial-4.jpg",
     "content": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit."
   }
 ]

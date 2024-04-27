@@ -1,29 +1,32 @@
-let allProducts = [];
-
 getProducts = () => {
-  $.get("/spapp/json/products.json", (data) => {
-    allProducts = data;
-    displayProducts(data);
+  $.get("../backend/get_products.php", (data) => {
+    let products = JSON.parse(data);
+    console.log(products);
+    displayProducts(products);
   });
 };
 
-getProducts();
-
 function displayProducts(products) {
   let output = "";
-  products.forEach((product) => {
-    output += `
+  $.each(products, (index, products) => {
+    $.each(products, (index, product) => {
+      $.each(product, (index, p) => {
+        output += `
       <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
         <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
+        <div class="d-flex justify-content-center mt-2">
+                  <button type="button" class="btn text-primary" data-bs-toggle="modal" data-bs-target="#editProductModal" onclick="editProduct(${p.product_id})"><i class="fas fa-edit" aria-hidden="true"></i></button>
+                  <button type="button" class="btn text-danger" onclick="deleteProduct(${p.product_id})"><i class="fa fa-trash" aria-hidden="true"></i></button>
+              </div>
           <div class="text-center p-4">
             <div class="d-inline-block border border-primary rounded-pill px-3 mb-3">
-              <span class="product-price">${product.price}</span>
+              <span class="product-price">€${p.product_price}</span>
             </div>
-            <h3 class="mb-3">${product.name}</h3>
-            <span>${product.description}</span>
+            <h3 class="mb-3">${p.product_name}</h3>
+            <span>${p.product_description}</span>
           </div>
           <div class="position-relative mt-auto">
-            <img class="img-fluid" src="${product.image}" alt="" />
+            <img class="img-fluid" src="${p.product_image}" alt="" />
             <div class="product-overlay">
               <a class="btn btn-lg btn-outline-light rounded-pill px-3 addToCartBtn">Add to cart</a>
             </div>
@@ -31,25 +34,15 @@ function displayProducts(products) {
         </div>
       </div>
     `;
+      });
+    });
   });
   document.getElementById("products").innerHTML = output;
 
-  // Add event listener to "Add to cart" buttons
   $(".addToCartBtn").on("click", function () {
-    // Show Bootstrap alert when "Add to cart" button is clicked
     showAlert("Product added to cart!");
   });
 }
-
-$("#search-input").on("keyup", function () {
-  let searchText = $(this).val().toLowerCase();
-  let filteredProducts = allProducts.filter(
-    (product) =>
-      product.name.toLowerCase().includes(searchText) ||
-      product.description.toLowerCase().includes(searchText)
-  );
-  displayProducts(filteredProducts);
-});
 
 // Function to show Bootstrap alert
 function showAlert(message) {
@@ -79,3 +72,5 @@ function showAlert(message) {
   `;
   $("head").append($("<style>").html(css));
 }
+
+getProducts();
