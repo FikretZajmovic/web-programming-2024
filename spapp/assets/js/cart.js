@@ -1,4 +1,4 @@
-$(document).ready(function () {
+/*$(document).ready(function () {
   // Array to store added products
   var cartItems = [];
   var deliveryFees = {
@@ -167,3 +167,4 @@ $(document).ready(function () {
   // Initial call to update the order page
   updateOrderPage();
 });
+*/

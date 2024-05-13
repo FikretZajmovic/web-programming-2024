@@ -51,14 +51,6 @@
       rel="stylesheet"
     />
     <link
-      href="/web-programming-project/spapp/assets/css/login.css"
-      rel="stylesheet"
-    />
-    <link
-      href="/web-programming-project/spapp/assets/css/register.css"
-      rel="stylesheet"
-    />
-    <link
       href="/web-programming-project/spapp/assets/css/order.css"
       rel="stylesheet"
     />
@@ -75,6 +67,7 @@
     <script src="/web-programming-project/spapp/assets/js/main.js"></script>
     <script src="/web-programming-project/spapp/utils/rest_client.js"></script>
     <script src="/web-programming-project/spapp/utils/constants.js"></script>
+    <script src="/web-programming-project/spapp/utils/utils.js"></script>
   </head>
 
   <body>
@@ -105,8 +98,12 @@
         </div>
         <div class="d-lg-flex navbar-nav align-items-center">
           <div class="ps-3 d-flex gap-2">
-            <a href="#register" class="nav-item nav-link mb-0">Register</a>
-            <a href="#login" class="nav-item nav-link mb-0">Login</a>
+            <a
+              href="#logout"
+              class="nav-item nav-link mb-0"
+              onclick="Utils.logout()"
+              >Logout</a
+            >
           </div>
           <div class="ps-3 d-flex align-items-center">
             <a href="#order" class="btn btn-outline-light"
@@ -122,19 +119,21 @@
       <section id="about" data-load="about.html"></section>
       <section id="contact" data-load="contact.html"></section>
       <section id="service" data-load="service.html"></section>
-      <section id="register" data-load="register.html"></section>
-      <section id="login" data-load="login.html"></section>
       <section id="order" data-load="order.html"></section>
       <section id="users" data-load="users.html"></section>
       <section id="checkout" data-load="checkout.html"></section>
     </main>
 
     <script>
-      let app = $.spapp({
-        templateDir: "./html/",
-        defaultView: "#home",
-      });
-      app.run();
+      if (Utils.get_from_localstorage("user")) {
+        let app = $.spapp({
+          templateDir: "./html/",
+          defaultView: "#home",
+        });
+        app.run();
+      } else {
+        window.location = "login";
+      }
     </script>
   </body>
 </html>

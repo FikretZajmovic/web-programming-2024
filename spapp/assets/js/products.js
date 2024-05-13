@@ -1,5 +1,5 @@
 // Event listener for adding a product to the cart
-$(document).on("click", ".product-overlay .btn-outline-light", function () {
+/* $(document).on("click", ".product-overlay .btn-outline-light", function () {
   console.log("Add to cart button clicked");
   var productName = $(this).closest(".product-item").find("h3").text().trim();
   var priceString = $(this)
@@ -37,3 +37,4 @@ function addToCart(productName, price) {
 
   console.log("Cart items:", cartItems);
 }
+*/

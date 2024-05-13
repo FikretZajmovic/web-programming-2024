@@ -1,13 +1,22 @@
 getReviews = () => {
-  $.get("../backend/get_reviews.php", (data) => {
-    let jsonData = JSON.parse(data);
-
-    let output = "";
-    $.each(jsonData, (index, reviews) => {
-      $.each(reviews, (index, review) => {
-        $.each(review, (index, r) => {
-          if (index === 0) {
-            output += `
+  $.ajax({
+    type: "GET",
+    url: "../backend/reviews",
+    beforeSend: function (xhr) {
+      if (Utils.get_from_localstorage("user")) {
+        xhr.setRequestHeader(
+          "Authentication",
+          Utils.get_from_localstorage("user").token
+        );
+      }
+    },
+    success: function (data) {
+      let output = "";
+      $.each(data, (index, reviews) => {
+        $.each(reviews, (index, review) => {
+          $.each(review, (index, r) => {
+            if (index === 0) {
+              output += `
             <div class="carousel-item active">
               <div class="testimonial-item bg-white rounded p-4">
                 <div class="d-flex align-items-center mb-4">
@@ -29,8 +38,8 @@ getReviews = () => {
               </div>
             </div>
           `;
-          } else {
-            output += `
+            } else {
+              output += `
             <div class="carousel-item">
               <div class="testimonial-item bg-white rounded p-4">
                 <div class="d-flex align-items-center mb-4">
@@ -52,11 +61,15 @@ getReviews = () => {
               </div>
             </div>
           `;
-          }
+            }
+          });
         });
       });
-    });
-    document.getElementById("reviewsCarousel").innerHTML = output;
+      document.getElementById("reviewsCarousel").innerHTML = output;
+    },
+    error: function (xhr, status, error) {
+      console.error("Failed to get reviews:", error);
+    },
   });
 };
 

@@ -24,7 +24,19 @@ $("#reviewForm").validate({
     blockUi("body");
     let data = serializeForm(form);
 
-    $.post("../backend/add_review.php", data)
+    $.ajax({
+      type: "POST",
+      url: "../backend/reviews/add",
+      data: data,
+      beforeSend: function (xhr) {
+        if (Utils.get_from_localstorage("user")) {
+          xhr.setRequestHeader(
+            "Authentication",
+            Utils.get_from_localstorage("user").token
+          );
+        }
+      },
+    })
       .done(function (response) {
         console.log("Data sent successfully:", data);
         $("#reviewForm")[0].reset();
