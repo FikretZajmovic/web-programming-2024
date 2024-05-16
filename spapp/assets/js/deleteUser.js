@@ -1,8 +1,16 @@
 deleteUser = (id) => {
   if (confirm("Do you want to delete the user with the id: " + id + "?")) {
     $.ajax({
-      url: "../backend/delete_user.php?user_id=" + id,
+      url: "../backend/users/delete/" + id,
       type: "DELETE",
+      beforeSend: function (xhr) {
+        if (Utils.get_from_localstorage("user")) {
+          xhr.setRequestHeader(
+            "Authentication",
+            Utils.get_from_localstorage("user").token
+          );
+        }
+      },
       success: () => {
         console.log("Succesfully deleted!");
         getUsers();

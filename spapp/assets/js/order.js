@@ -1,5 +1,5 @@
 // Array to store added products
-var cartItems = [];
+/* var cartItems = [];
 var deliveryFees = {
   standard: 5.0,
   express: 10.0,
@@ -141,3 +141,4 @@ $("#delivery-option").on("change", function () {
 
 // Initial call to update the order page
 updateOrderPage();
+*/

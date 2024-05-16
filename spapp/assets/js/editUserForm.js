@@ -2,17 +2,29 @@ $("#editUserForm").validate({
   submitHandler: (form, event) => {
     event.preventDefault();
     let data = serializeForm(form);
-    $.post("../backend/add_user.php", data)
-      .done(function (response) {
+    $.ajax({
+      type: "POST",
+      url: "../backend/users/add",
+      data: data,
+      beforeSend: function (xhr) {
+        if (Utils.get_from_localstorage("user")) {
+          xhr.setRequestHeader(
+            "Authentication",
+            Utils.get_from_localstorage("user").token
+          );
+        }
+      },
+      success: function (response) {
         console.log("Data sent successfully:", data);
         getUsers();
-      })
-      .fail(function (xhr, status, error) {
+      },
+      error: function (xhr, status, error) {
         console.error("Error:", error);
-      })
-      .always(function () {
+      },
+      complete: function () {
         unblockUI("body");
-      });
+      },
+    });
   },
 });
 

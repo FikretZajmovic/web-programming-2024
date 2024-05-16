@@ -28,7 +28,7 @@ class ProductService {
 
     public function editProduct($product) {
         $product_id = $product['product_id'];
-        unset($user['product_id']);
+        unset($product['product_id']);
 
         $this->productDao->editProduct($product_id, $product);
     }

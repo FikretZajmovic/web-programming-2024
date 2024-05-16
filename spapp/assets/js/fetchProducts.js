@@ -1,8 +1,25 @@
 getProducts = () => {
-  $.get("../backend/get_products.php", (data) => {
-    let products = JSON.parse(data);
-    console.log(products);
-    displayProducts(products);
+  $.ajax({
+    type: "GET",
+    url: "../backend/products",
+    beforeSend: function (xhr) {
+      if (Utils.get_from_localstorage("user")) {
+        xhr.setRequestHeader(
+          "Authentication",
+          Utils.get_from_localstorage("user").token
+        );
+      }
+    },
+    success: function (data) {
+      console.log(data);
+      displayProducts(data);
+    },
+    error: function (xhr, status, error) {
+      console.error("Failed to get products:", error);
+    },
+    complete: function () {
+      console.log("Product retrieval completed.");
+    },
   });
 };
 

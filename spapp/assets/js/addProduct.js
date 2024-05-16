@@ -26,7 +26,19 @@ $("#addProductForm").validate({
     blockUi("body");
     let data = serializeForm(form);
 
-    $.post("../backend/add_product.php", data)
+    $.ajax({
+      type: "POST",
+      url: "../backend/products/add",
+      data: data,
+      beforeSend: function (xhr) {
+        if (Utils.get_from_localstorage("user")) {
+          xhr.setRequestHeader(
+            "Authentication",
+            Utils.get_from_localstorage("user").token
+          );
+        }
+      },
+    })
       .done(function (response) {
         console.log("Data sent successfully:", data);
         $("#addProductForm")[0].reset();

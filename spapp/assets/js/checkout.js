@@ -1,4 +1,4 @@
-// Function to log order details
+/* // Function to log order details
 function logOrderDetails() {
   // Retrieve order details from localStorage
   var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -44,3 +44,4 @@ document.addEventListener("DOMContentLoaded", function () {
   // Call logOrderDetails function after the DOM has loaded
   logOrderDetails();
 });
+*/

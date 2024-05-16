@@ -1,15 +1,23 @@
 getUsers = () => {
-  $.get("../backend/get_users.php", (data) => {
-    let jsonData = JSON.parse(data);
-
-    let html = ``;
-
-    console.log(data);
-    $.each(jsonData, (index, users) => {
-      $.each(users, (index, user) => {
-        $.each(user, (index, u) => {
-          html += `
-            <div class="card col-md-3" style="width: 15rem" id="bakery-${u.user_id}">
+  $.ajax({
+    url: "../backend/users",
+    type: "GET",
+    beforeSend: function (xhr) {
+      if (Utils.get_from_localstorage("user")) {
+        xhr.setRequestHeader(
+          "Authentication",
+          Utils.get_from_localstorage("user").token
+        );
+      }
+    },
+    success: function (data) {
+      let html = ``;
+      console.log(data);
+      $.each(data, (index, users) => {
+        $.each(users, (index, user) => {
+          $.each(user, (index, u) => {
+            html += `
+              <div class="card col-md-3" style="width: 15rem" id="user-${u.user_id}">
                 <div class="card-body">
                   <h6 class="card-title text-center" style="color: #black">
                     ${u.first_name} ${u.last_name} <br> <span class="fw-light text-primary">${u.phone_number}</span>
@@ -23,10 +31,14 @@ getUsers = () => {
                 </div>
               </div>
               `;
+          });
         });
       });
-    });
-    $("#userSection").html(html);
+      $("#userSection").html(html);
+    },
+    error: function (xhr, status, error) {
+      console.error("Failed to get users:", error);
+    },
   });
 };
 
