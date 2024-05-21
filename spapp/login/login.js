@@ -28,7 +28,7 @@ $("#login-form").validate({
       .done(function (response) {
         console.log("Data sent successfully:", data);
         $("#login-form")[0].reset();
-        Utils.set_to_localstorage("user", response);
+        Utils.set_to_localstorage("user", response.user);
         window.location = "../#home";
         console.log("Response is: ", response);
       })

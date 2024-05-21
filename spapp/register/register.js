@@ -56,7 +56,7 @@ $("#bootstrap-form").validate({
 
     $.ajax({
       type: "POST",
-      url: "../backend/users/add",
+      url: "../../backend/users/add",
       data: data,
       beforeSend: function (xhr) {
         if (Utils.get_from_localstorage("user")) {
