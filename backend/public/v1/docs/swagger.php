@@ -2,11 +2,7 @@
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
-if ($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == '127.0.0.1') {
-    define('BASE_URL', 'http://localhost/Web-Programming-Project/backend/');
-} else {
-    define('BASE_URL', 'https://goldfish-app-l87ee.ondigitalocean.app/backend/');
-}
+define('BASE_URL', 'https://goldfish-app-l87ee.ondigitalocean.app/backend/');
 
 error_reporting(0);
 
