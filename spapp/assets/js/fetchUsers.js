@@ -1,6 +1,6 @@
 getUsers = () => {
   $.ajax({
-    url: "../backend/users",
+    url: "https://goldfish-app-l87ee.ondigitalocean.app/backend/users",
     type: "GET",
     beforeSend: function (xhr) {
       if (Utils.get_from_localstorage("user")) {

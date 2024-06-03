@@ -1,7 +1,7 @@
 editUser = (id) => {
   $.ajax({
     type: "GET",
-    url: "../backend/users/" + id,
+    url: "https://goldfish-app-l87ee.ondigitalocean.app/backend/users/" + id,
     beforeSend: function (xhr) {
       if (Utils.get_from_localstorage("user")) {
         xhr.setRequestHeader(

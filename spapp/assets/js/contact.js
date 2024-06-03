@@ -41,11 +41,8 @@ function contactFormHandler(form) {
   blockUi("#contact-form");
   let data = serializeForm(form);
 
-  // Additional logic for handling contact form submission
-  // For demonstration purposes, let's just log the form data
   console.log("Contact Form Data:", data);
 
-  // Optionally, reset the form fields after submission
   form.reset();
 
   unblockUi("#contact-form");

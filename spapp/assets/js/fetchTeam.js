@@ -1,7 +1,5 @@
 getTeam = () => {
-  // Through the library called JQuery
   $.get("/web-programming-project/spapp/json/team.json", (data) => {
-    // Callback function
     let output = "";
     data.forEach((team) => {
       output += `

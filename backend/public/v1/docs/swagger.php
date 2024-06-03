@@ -2,7 +2,7 @@
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
-define('BASE_URL', 'http://localhost/Web-Programming-Project/backend/');
+define('BASE_URL', 'https://goldfish-app-l87ee.ondigitalocean.app/backend/');
 
 error_reporting(0);
 

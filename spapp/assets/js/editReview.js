@@ -1,7 +1,7 @@
 editReview = (id) => {
   $.ajax({
     type: "GET",
-    url: "../backend/reviews/" + id,
+    url: "https://goldfish-app-l87ee.ondigitalocean.app/backend/reviews/" + id,
     beforeSend: function (xhr) {
       if (Utils.get_from_localstorage("user")) {
         xhr.setRequestHeader(

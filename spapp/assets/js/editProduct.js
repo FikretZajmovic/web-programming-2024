@@ -1,7 +1,7 @@
 editProduct = (id) => {
   $.ajax({
     type: "GET",
-    url: "../backend/products/" + id,
+    url: "https://goldfish-app-l87ee.ondigitalocean.app/backend/products/" + id,
     beforeSend: function (xhr) {
       if (Utils.get_from_localstorage("user")) {
         xhr.setRequestHeader(

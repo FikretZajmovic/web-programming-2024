@@ -4,7 +4,7 @@ $("#editReviewForm").validate({
     let data = serializeForm(form);
     $.ajax({
       type: "POST",
-      url: "../backend/reviews/add",
+      url: "https://goldfish-app-l87ee.ondigitalocean.app/backend/reviews/add",
       data: data,
       beforeSend: function (xhr) {
         if (Utils.get_from_localstorage("user")) {
