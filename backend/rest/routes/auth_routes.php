@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../services/AuthService.class.php';
+require_once __DIR__ . '/../config.php';
 
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
@@ -35,16 +36,16 @@ Flight::group('/auth', function() {
         if(!$user || !password_verify($payload['password'], $user['password']))
             Flight::halt(500, "Invalid username or password");
 
-        unset($user['password']); // We should not encode password in token
+        unset($user['password']);
         $payload = [
             'user' => $user,
-            'iat' => time(), // issued at
-            'exp' => time() + (60 * 60 * 24) // valid for 1 minute
+            'iat' => time(), 
+            'exp' => time() + (60 * 60 * 24)
         ];
 
         $token = JWT::encode(
             $payload, 
-            JWT_SECRET, 
+            Config::JWT_SECRET(), 
             'HS256'
         );
 
@@ -71,7 +72,7 @@ Flight::group('/auth', function() {
         try {
             $token = Flight::request()->getHeader('Authentication');
             if($token){
-                $decoded_token = JWT::decode($token, new Key(JWT_SECRET, 'HS256'));
+                $decoded_token = JWT::decode($token, new Key(Config::JWT_SECRET(), 'HS256'));
                 Flight::json([
                     'jwt_decoded' => $decoded_token,
                     'user' => $decoded_token->user

@@ -11,6 +11,9 @@ Flight::group('/products', function(){
      *      path="/products",
      *      tags={"products"},
      *      summary="Get all products",
+     *      security={
+     *          {"ApiKey": {}}
+     *      },
      *      @OA\Response(
      *           response=200,
      *           description="Get all products"
@@ -28,6 +31,9 @@ Flight::route('GET /', function(){
      *      path="/products/product",
      *      tags={"products"},
      *      summary="Get product by id",
+     *      security={
+     *          {"ApiKey": {}}
+     *      },
      *      @OA\Response(
      *           response=200,
      *           description="Product data, or false if product doesn't exist"

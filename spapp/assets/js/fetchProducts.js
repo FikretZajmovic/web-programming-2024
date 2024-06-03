@@ -1,7 +1,7 @@
 getProducts = () => {
   $.ajax({
     type: "GET",
-    url: "../backend/products",
+    url: "https://goldfish-app-l87ee.ondigitalocean.app/backend/products",
     beforeSend: function (xhr) {
       if (Utils.get_from_localstorage("user")) {
         xhr.setRequestHeader(

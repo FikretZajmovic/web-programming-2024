@@ -1,7 +1,9 @@
 deleteReview = (id) => {
   if (confirm("Do you want to delete the user with the id: " + id + "?")) {
     $.ajax({
-      url: "../backend/reviews/delete/" + id,
+      url:
+        "https://goldfish-app-l87ee.ondigitalocean.app/backend/reviews/delete/" +
+        id,
       type: "DELETE",
       beforeSend: function (xhr) {
         if (Utils.get_from_localstorage("user")) {

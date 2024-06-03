@@ -4,7 +4,7 @@ $("#editProductForm").validate({
     let data = serializeForm(form);
     $.ajax({
       type: "POST",
-      url: "../backend/products/add",
+      url: "https://goldfish-app-l87ee.ondigitalocean.app/backend/products/add",
       data: data,
       beforeSend: function (xhr) {
         if (Utils.get_from_localstorage("user")) {

@@ -8,9 +8,30 @@ Flight::group('/users', function(){
 
     /**
      * @OA\Get(
+     *      path="/users/info",
+     *      tags={"users"},
+     *      summary="Get user details",
+     *      security={
+     *          {"ApiKey": {}}   
+     *      },
+     *      @OA\Response(
+     *           response=200,
+     *           description="User details"
+     *      )
+     * )
+     */
+    Flight::route('GET /info', function() {
+        Flight::json(Flight::get('userService')->getUserByID(Flight::get('user')->user_id));
+    });
+
+    /**
+     * @OA\Get(
      *      path="/users",
      *      tags={"users"},
      *      summary="Get all users",
+     *      security={
+     *          {"ApiKey": {}}
+     *      },
      *      @OA\Response(
      *           response=200,
      *           description="Get all users"
@@ -28,6 +49,9 @@ Flight::route('GET /', function(){
      *      path="/users/user",
      *      tags={"users"},
      *      summary="Get user by id",
+     *      security={
+     *          {"ApiKey": {}}
+     *      },
      *      @OA\Response(
      *           response=200,
      *           description="User data, or false if user doesn't exist"

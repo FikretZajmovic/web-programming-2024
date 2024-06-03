@@ -11,6 +11,9 @@ Flight::group('/reviews', function(){
      *      path="/reviews",
      *      tags={"reviews"},
      *      summary="Get all reviews",
+     *      security={
+     *          {"ApiKey": {}}
+     *      },
      *      @OA\Response(
      *           response=200,
      *           description="Get all reviews"
@@ -28,6 +31,9 @@ Flight::route('GET /', function(){
      *      path="/reviews/review",
      *      tags={"reviews"},
      *      summary="Get review by id",
+     *      security={
+     *          {"ApiKey": {}}
+     *      },
      *      @OA\Response(
      *           response=200,
      *           description="Review data, or false if review doesn't exist"
