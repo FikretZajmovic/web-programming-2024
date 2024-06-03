@@ -24,7 +24,10 @@ $("#login-form").validate({
     blockUi("body");
     let data = serializeForm(form);
 
-    $.post("../../backend/auth/login", data)
+    $.post(
+      "https://goldfish-app-l87ee.ondigitalocean.app/backend/auth/login",
+      data
+    )
       .done(function (response) {
         console.log("Data sent successfully:", data);
         $("#login-form")[0].reset();

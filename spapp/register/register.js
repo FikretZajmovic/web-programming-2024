@@ -56,7 +56,7 @@ $("#bootstrap-form").validate({
 
     $.ajax({
       type: "POST",
-      url: "../../backend/users/add",
+      url: "https://goldfish-app-l87ee.ondigitalocean.app/backend/users/add",
       data: data,
       beforeSend: function (xhr) {
         if (Utils.get_from_localstorage("user")) {
