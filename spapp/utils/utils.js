@@ -3,7 +3,7 @@ const Utils = {
     return JSON.parse(window.localStorage.getItem(key));
   },
   set_to_localstorage: function (key, value) {
-    window.localStorage.setItem(key, JSON.stringify(value));
+    window.localStorage.setItem(key, value);
   },
   logout: function () {
     localStorage.clear();
