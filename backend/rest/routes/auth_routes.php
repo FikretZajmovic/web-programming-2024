@@ -50,7 +50,7 @@ Flight::group('/auth', function() {
         );
 
         Flight::json([
-            'user' => array_merge($user, ['token' => $token]),
+            $token
         ]);
     });
 
