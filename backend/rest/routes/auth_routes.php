@@ -49,9 +49,9 @@ Flight::group('/auth', function() {
             'HS256'
         );
 
-        Flight::json([
-            $payload
-        ]);
+        Flight::json(
+            array_merge($user, ['token' => $token])        
+        );
     });
 
     /**
