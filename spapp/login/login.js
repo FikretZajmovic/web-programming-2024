@@ -32,7 +32,7 @@ $("#login-form").validate({
         console.log("Data sent successfully:", data);
         $("#login-form")[0].reset();
         window.localStorage.setItem("user", JSON.stringify(response));
-        window.location = "../#home";
+        //window.location = "../#home";
         console.log("Response is: ", response);
       })
       .fail(function (xhr, status, error) {
