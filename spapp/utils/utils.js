@@ -1,6 +1,7 @@
 const Utils = {
   get_from_localstorage: function (key) {
-    return window.localStorage.getItem(key);
+    const value = window.localStorage.getItem(key);
+    return value ? JSON.parse(value) : null;
   },
   set_to_localstorage: function (key, value) {
     window.localStorage.setItem(key, JSON.stringify(value));

@@ -109,13 +109,14 @@
     </main>
 
     <script>
-      if (Utils.get_from_localstorage("user")) {
+      const user = Utils.get_from_localstorage("user");
+      if (user) {
         let app = $.spapp({
           templateDir: "./html/",
           defaultView: "#home",
         });
         app.run();
-        console.log("user");
+        console.log("User data:", user);
       } else {
         window.location = "login";
       }
