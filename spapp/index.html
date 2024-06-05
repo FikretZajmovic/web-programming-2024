@@ -109,17 +109,6 @@
     </main>
 
     <script>
-      $.ajaxSetup({
-        beforeSend: function (xhr) {
-          if (JSON.parse(window.localStorage.getItem("user"))) {
-            xhr.setRequestHeader(
-              "Authentication",
-              JSON.parse(window.localStorage.getItem("user")).token
-            );
-          }
-        },
-      });
-
       const user = Utils.get_from_localstorage("user");
       if (user) {
         let app = $.spapp({
