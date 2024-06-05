@@ -50,7 +50,7 @@ Flight::group('/auth', function() {
         );
 
         Flight::json([
-            $token
+            $payload
         ]);
     });
 
